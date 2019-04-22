@@ -4,11 +4,13 @@ import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/blocks', pathMatch: 'full' },
-  { path: '**', component: NotfoundComponent },
+  // { path: '**', component: NotfoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true }
+  imports: [
+    RouterModule.forRoot(
+      routes, { enableTracing: true }
     )
   ],
   exports: [RouterModule]

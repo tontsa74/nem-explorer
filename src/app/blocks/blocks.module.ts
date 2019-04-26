@@ -4,7 +4,6 @@ import { MatTableModule } from '@angular/material/table';
 
 import { BlocksRoutingModule } from './blocks-routing.module';
 import { BlocksComponent } from './blocks.component';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     BlocksRoutingModule,
-    HttpClientModule,
     MatTableModule
   ]
 })

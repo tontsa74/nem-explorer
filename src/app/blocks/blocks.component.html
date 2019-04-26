@@ -1,3 +1,11 @@
-<p>
-  blocks works!
-</p>
+<h3>blocks</h3>
+
+<div>
+    <ul>
+        <li *ngFor="let block of blocks">
+            <div>height: {{block.height}}</div>
+            <div>timeStamp: {{block.timeStamp}}</div>
+            <div>prevBlockHash: {{block.prevBlockHash.data}}</div>
+        </li>
+    </ul>
+</div>

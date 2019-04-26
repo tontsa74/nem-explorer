@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BlocksRoutingModule } from './blocks-routing.module';
 import { BlocksComponent } from './blocks.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { BlocksComponent } from './blocks.component';
   ],
   imports: [
     CommonModule,
-    BlocksRoutingModule
+    BlocksRoutingModule,
+    HttpClientModule
   ]
 })
 export class BlocksModule { }

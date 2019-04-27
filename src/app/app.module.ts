@@ -18,8 +18,8 @@ import { BlocksModule } from './blocks/blocks.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     BlocksModule,
+    AppRoutingModule,
     HttpClientModule
   ],
   providers: [],

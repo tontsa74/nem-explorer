@@ -2,6 +2,9 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { ExplorerBlockViewModel, ExplorerBlockViewModelData } from '../interfaces/ExplorerBlockViewModel';
 import { NemNisService } from '../nem-nis.service';
 import { Height } from '../interfaces/Chain';
+import { Block } from '../interfaces/Block';
+import { MatDialog } from '@angular/material';
+import { Transaction } from '../interfaces/Transaction';
 
 @Component({
   selector: 'app-blocks',
@@ -12,6 +15,8 @@ export class BlocksComponent implements OnInit {
   displayedColumns: string[] = ['height', 'timeStamp', 'txes'];
   blocks: ExplorerBlockViewModelData[] = [];
   chainHeight: Height;
+  blockSelected: Block;
+  transactions: Transaction[] = [];
 
   constructor(private nemnis: NemNisService) { }
 
@@ -25,10 +30,16 @@ export class BlocksComponent implements OnInit {
   }
 
   // fetch 10 blocks
-  fetchBlocksAfter(height) {
+  fetchBlocksAfter(height): void {
     const fetchHeight = {height: height - 10};
     this.nemnis.fetchBlocksAfter(fetchHeight, (response) => {
       this.blocks = response.data;
     });
+  }
+
+  blockClicked(block: Block): void {
+    console.log('blockClicked ' + block.height);
+    this.blockSelected = block;
+    this.transactions = block.transactions;
   }
 }

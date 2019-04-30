@@ -4,10 +4,14 @@ import { MatTableModule } from '@angular/material/table';
 
 import { BlocksRoutingModule } from './blocks-routing.module';
 import { BlocksComponent } from './blocks.component';
+import { BlockTxesComponent } from './block-txes/block-txes.component';
+import { MsNemesisPipe } from '../pipes/ms-nemesis.pipe';
 
 @NgModule({
   declarations: [
-    BlocksComponent
+    BlocksComponent,
+    BlockTxesComponent,
+    MsNemesisPipe
   ],
   imports: [
     CommonModule,

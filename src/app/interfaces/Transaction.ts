@@ -8,4 +8,12 @@ export interface Transaction {
   timeStamp: number;
   type: number;
   version: number;
+  amount: number;
+  message: Message;
+  recipient: string;
+}
+
+interface Message {
+  payload: string;
+  type: number;
 }

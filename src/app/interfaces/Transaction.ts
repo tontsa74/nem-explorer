@@ -13,7 +13,7 @@ export interface Transaction {
   recipient: string;
 }
 
-interface Message {
+export interface Message {
   payload: string;
   type: number;
 }

@@ -7,13 +7,15 @@ import { BlocksComponent } from './blocks.component';
 import { BlockTxesComponent } from './block-txes/block-txes.component';
 import { MsNemesisPipe } from '../pipes/ms-nemesis.pipe';
 import { TxesDetailsComponent } from './block-txes/txes-details/txes-details.component';
+import { MessagePipe } from '../pipes/message.pipe';
 
 @NgModule({
   declarations: [
     BlocksComponent,
     BlockTxesComponent,
     MsNemesisPipe,
-    TxesDetailsComponent
+    TxesDetailsComponent,
+    MessagePipe
   ],
   imports: [
     CommonModule,

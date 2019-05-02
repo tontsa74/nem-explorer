@@ -12,7 +12,7 @@ import { Transaction } from '../interfaces/Transaction';
   styleUrls: ['./blocks.component.css']
 })
 export class BlocksComponent implements OnInit {
-  displayedColumns: string[] = ['height', 'timeStamp', 'txes'];
+  displayedColumns: string[] = ['height', 'signer', 'timeStamp', 'txes'];
   blocks: ExplorerBlockViewModelData[] = [];
   chainHeight: Height;
   blockSelected: Block;

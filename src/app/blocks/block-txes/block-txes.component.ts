@@ -14,7 +14,7 @@ export class BlockTxesComponent implements OnInit {
   @Input()
   transactions: Transaction[];
 
-  displayedColumns: string[] = ['amount', 'fee', 'timeStamp'];
+  displayedColumns: string[] = ['recipient', 'amount', 'fee', 'timeStamp'];
 
   constructor() { }
 

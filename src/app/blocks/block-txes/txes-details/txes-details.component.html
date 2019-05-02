@@ -1,0 +1,16 @@
+<h4>
+  txes-details
+</h4>
+<h1 mat-dialog-title>{{data.name}}</h1>
+  <div *ngFor="let item of data | keyvalue">
+    <div *ngIf="item.key === 'message'; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <b>{{item.key}}</b>: 
+      Type: {{item.value.type}}
+      Payload: {{item.value.payload}}
+    </ng-template>
+    
+    <ng-template #elseBlock>
+      <b>{{item.key}}</b>: {{item.value}}
+    </ng-template>
+</div>

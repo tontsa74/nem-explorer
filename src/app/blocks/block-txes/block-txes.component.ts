@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Block } from 'src/app/interfaces/Block';
 import { Transaction } from 'src/app/interfaces/Transaction';
+import { TxesDetailsComponent } from './txes-details/txes-details.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-block-txes',
@@ -16,13 +18,15 @@ export class BlockTxesComponent implements OnInit {
 
   displayedColumns: string[] = ['recipient', 'amount', 'fee', 'timeStamp'];
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
   openDialog(transaction: Transaction): void {
-    console.log('test ' + JSON.stringify(transaction));
-    // const dialogRef = this.dialog.open()
+    const dialogRef = this.dialog.open(TxesDetailsComponent, {
+      width: '90%',
+      data: transaction
+    });
   }
 }

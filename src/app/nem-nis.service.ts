@@ -15,7 +15,7 @@ export class NemNisService {
   fetchChainHeight(callBackFunction: (result: Height) => void): void {
     const url = 'http://localhost:7890/chain/height';
     this.http.get<Height>(url).subscribe((resp) => {
-      console.log('Height: ' + resp);
+      console.log(resp);
       callBackFunction(resp);
     });
   }

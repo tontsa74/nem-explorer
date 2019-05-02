@@ -38,7 +38,6 @@ export class BlocksComponent implements OnInit {
   }
 
   blockClicked(block: Block): void {
-    console.log('blockClicked ' + block.height);
     this.blockSelected = block;
     this.transactions = block.transactions;
   }

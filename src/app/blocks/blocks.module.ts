@@ -1,22 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableModule, MatDialogModule } from '@angular/material';
 
 import { BlocksRoutingModule } from './blocks-routing.module';
 import { BlocksComponent } from './blocks.component';
 import { BlockTxesComponent } from './block-txes/block-txes.component';
 import { MsNemesisPipe } from '../pipes/ms-nemesis.pipe';
+import { TxesDetailsComponent } from './block-txes/txes-details/txes-details.component';
 
 @NgModule({
   declarations: [
     BlocksComponent,
     BlockTxesComponent,
-    MsNemesisPipe
+    MsNemesisPipe,
+    TxesDetailsComponent
   ],
   imports: [
     CommonModule,
     BlocksRoutingModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    TxesDetailsComponent
   ]
 })
 export class BlocksModule { }

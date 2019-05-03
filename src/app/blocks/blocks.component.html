@@ -28,17 +28,9 @@
   </table>
 
   <mat-paginator showFirstLastButtons
-    [pageSizeOptions]="pageSizeOptions" 
-    (page)="pageEvent = $event"
-    (page)="fetchBlocks(pageEvent)" >
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="fetchBlocks($event)" >
   </mat-paginator>
-
-  <div *ngIf="pageEvent">
-      <h5>Page Change Event Properties</h5>
-      <div>List length: {{pageEvent.length}}</div>
-      <div>Page size: {{pageEvent.pageSize}}</div>
-      <div>Page index: {{pageEvent.pageIndex}}</div>
-  </div>
 
 </div>
 <div *ngIf="transactions.length > 0">

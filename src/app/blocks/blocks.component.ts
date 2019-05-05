@@ -30,7 +30,7 @@ export class BlocksComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
-
+    // this.nemnis.test();
     this.initBlocks();
   }
 

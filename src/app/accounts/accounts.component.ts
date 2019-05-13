@@ -8,7 +8,7 @@ import { Account } from '../interfaces/Account';
   styleUrls: ['./accounts.component.css']
 })
 export class AccountsComponent implements OnInit {
-  address = 'NCSL345UPDK5X4WAZ2RMDVCYBAFZATIDCTTLHFFK';
+  address; // = 'NCSL345UPDK5X4WAZ2RMDVCYBAFZATIDCTTLHFFK';
   account: Account;
 
   constructor(private nemnis: NemNisService) { }

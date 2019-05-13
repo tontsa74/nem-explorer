@@ -2,13 +2,19 @@
 <div>
   <mat-form-field class="form-field">
       <input matInput type="text" placeholder="address"
+      #addressElement="ngModel"
+      pattern="N+[A-Z0-9]+"
+      required minlength="40"
       [(ngModel)]="address">
+      <mat-error [hidden]="addressElement.valid || addressElement.pristine">
+          Address must start with N minium lenght 40.
+      </mat-error>
       <button mat-button *ngIf="address" matSuffix mat-icon-button aria-label="Clear" (click)="address=''">
         <mat-icon>clear</mat-icon>
       </button>
-      <button mat-raised-button color="primary" 
-        matSuffix mat-icon-button
-        aria-label="Search" 
+      <button mat-raised-button color="primary" matSuffix mat-icon-button
+        type="submit" aria-label="Search" 
+        [disabled]="!addressElement.valid"
         (click)="fetchAccount(address)">
         <mat-icon>search</mat-icon>
       </button>

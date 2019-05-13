@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Block } from './interfaces/Block';
 import { ExplorerBlockViewModel, ExplorerBlockViewModelData } from './interfaces/ExplorerBlockViewModel';
 import { Height } from './interfaces/Chain';
+import { Account } from './interfaces/Account';
 
 @Injectable({
   providedIn: 'root'
@@ -38,10 +39,15 @@ export class NemNisService {
     });
   }
 
+  fetchAccount(address, callBackFunction: (result: Account) => void): void {
+    const url = this.url + '/account/get?address=';
+    this.http.get<Account>(url + address).subscribe((resp) => {
+      console.log(resp);
+      callBackFunction(resp);
+    });
+  }
+
   test() {
     console.log('test');
-    this.http.get('http://localhost:3000/employees/0').subscribe((resp) => {
-      console.log(resp);
-    });
   }
 }

@@ -1,3 +1,29 @@
-<p>
-  accounts works!
-</p>
+<h3>Accounts</h3>
+<div>
+  <mat-form-field class="form-field">
+      <input matInput type="text" placeholder="address"
+      [(ngModel)]="address">
+      <button mat-button *ngIf="address" matSuffix mat-icon-button aria-label="Clear" (click)="address=''">
+        <mat-icon>clear</mat-icon>
+      </button>
+      <button mat-raised-button color="primary" 
+        matSuffix mat-icon-button
+        aria-label="Search" 
+        (click)="fetchAccount(address)">
+        <mat-icon>search</mat-icon>
+      </button>
+  </mat-form-field>
+  <div *ngIf="account != null">
+    <mat-list>
+      <mat-list-item>Address: {{account.account.address}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Balance: {{account.account.balance}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Vested Balance: {{account.account.vestedBalance}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Harvested Blocks: {{account.account.harvestedBlocks}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Importance: {{account.account.importance}}</mat-list-item>
+    </mat-list>
+  </div>
+</div>

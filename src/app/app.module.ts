@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { BlocksModule } from './blocks/blocks.module';
 import { AccountsModule } from './accounts/accounts.module';
+import { MatToolbarModule, MatTabsModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { AccountsModule } from './accounts/accounts.module';
     BlocksModule,
     AccountsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

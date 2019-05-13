@@ -9,6 +9,7 @@ import { Height } from './interfaces/Chain';
   providedIn: 'root'
 })
 export class NemNisService {
+  // url = 'http://explorer-nem.northeurope.cloudapp.azure.com:3000';
   url = 'http://localhost:7890';
 
   constructor(private http: HttpClient) { }

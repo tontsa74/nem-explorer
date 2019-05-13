@@ -6,19 +6,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { AccountsComponent } from './accounts/accounts.component';
 import { BlocksModule } from './blocks/blocks.module';
+import { AccountsModule } from './accounts/accounts.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotfoundComponent,
-    AccountsComponent
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     BlocksModule,
+    AccountsModule,
     AppRoutingModule,
     HttpClientModule
   ],

@@ -48,11 +48,11 @@ export class NemNisService {
     });
   }
 
-  fetchNodes(callBackFunction: (result: Node[]) => void): void {
+  fetchNodes(callBackFunction: (result: NodeCollection) => void): void {
     const url = this.url + '/node/peer-list/reachable';
     this.http.get<NodeCollection>(url).subscribe(resp => {
       console.log(resp);
-      callBackFunction(resp.data);
+      callBackFunction(resp);
     });
   }
 

@@ -9,6 +9,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { BlocksModule } from './blocks/blocks.module';
 import { AccountsModule } from './accounts/accounts.module';
 import { MatToolbarModule, MatTabsModule } from '@angular/material';
+import { NodesModule } from './nodes/nodes.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatToolbarModule, MatTabsModule } from '@angular/material';
     BrowserAnimationsModule,
     BlocksModule,
     AccountsModule,
+    NodesModule,
     AppRoutingModule,
     HttpClientModule,
     MatToolbarModule,

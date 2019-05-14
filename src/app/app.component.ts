@@ -22,6 +22,11 @@ export class AppComponent implements OnInit {
         label: 'Accounts',
         path: './accounts',
         index: 1
+      },
+      {
+        label: 'Nodes',
+        path: './nodes',
+        index: 2
       }
     ];
   }

@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { NemNisService } from './nem-nis.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnChanges {
   title = 'NEM - Blockchain Explorer';
   navLinks: any[];
   activeLinkIndex = -1;
+  address;
+  nodeUrl: string;
 
-  constructor(private router: Router) {
+  constructor(private nemnis: NemNisService, private router: Router) {
+    this.nemnis.currentNode.subscribe(nodeUrl => this.nodeUrl = nodeUrl);
+
     this.navLinks = [
       {
         label: 'Blocks',
@@ -32,9 +37,18 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('ngOnInit');
     this.router.events.subscribe((res) => {
       this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
   });
+  }
+
+  ngOnChanges() {
+    console.log('OnChanges');
+  }
+
+  fetchAccount(address) {
+    this.nemnis.address = address;
   }
 
 }

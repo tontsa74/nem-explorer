@@ -21,6 +21,8 @@ export class NodesComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  nodeUrl: string;
+
   constructor(private nemnis: NemNisService) { }
 
   ngOnInit() {
@@ -30,13 +32,14 @@ export class NodesComponent implements OnInit {
 
   fetchNodes() {
     this.nemnis.fetchNodes((response) => {
-      console.log(response.data[0].endpoint.host);
-      this.dataSource.data = response.data; // this.nodes;
+      this.dataSource.data = response.data;
     });
   }
 
   nodeClicked(node: Node): void {
     this.nodeSelected = node;
-    console.log(node.identity['public-key']);
+    const url = `${ node.endpoint.protocol }://${ node.endpoint.host }:${ node.endpoint.port}`;
+    this.nemnis.changeNode(url);
+    this.fetchNodes();
   }
 }

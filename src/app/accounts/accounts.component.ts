@@ -14,6 +14,7 @@ export class AccountsComponent implements OnInit {
   constructor(private nemnis: NemNisService) { }
 
   ngOnInit() {
+    this.address = this.nemnis.address;
   }
 
   fetchAccount(address: string) {

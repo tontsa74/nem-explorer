@@ -11,6 +11,10 @@ import { AccountsModule } from './accounts/accounts.module';
 import { MatToolbarModule, MatTabsModule } from '@angular/material';
 import { NodesModule } from './nodes/nodes.module';
 
+import { MatListModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule } from '@angular/material';
+
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,8 @@ import { NodesModule } from './nodes/nodes.module';
     AppRoutingModule,
     HttpClientModule,
     MatToolbarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatListModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

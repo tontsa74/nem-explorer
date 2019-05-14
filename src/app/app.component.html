@@ -2,6 +2,7 @@
   <h2>
     {{ title }}
   </h2>
+  <p>Current node: {{ nodeUrl }}</p>
   <nav mat-tab-nav-bar>
     <a mat-tab-link
     *ngFor="let link of navLinks"
@@ -10,8 +11,34 @@
     [active]="rla.isActive">
     {{link.label}}
   </a>
+  
+  <div>
+    <mat-form-field class="form-field">
+      <input matInput type="text" placeholder="address"
+      #addressElement="ngModel"
+      pattern="N+[A-Z0-9]+"
+      maxlength="40"
+      required minlength="40"
+      [(ngModel)]="address">
+      <mat-error [hidden]="addressElement.valid || addressElement.pristine">
+          Address must start with letter N, containing numbers 0-9 and capital letters A-Z.
+      </mat-error>
+      <button mat-button *ngIf="address" matSuffix mat-icon-button aria-label="Clear" (click)="address=''">
+        <mat-icon>clear</mat-icon>
+      </button>
+      <button mat-raised-button color="primary" matSuffix mat-icon-button
+        type="submit" aria-label="Search" 
+        [disabled]="!addressElement.valid"
+        (click)="fetchAccount(address)">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+
   </nav>
 </div>
+
 <div>
   <router-outlet></router-outlet>
 </div>

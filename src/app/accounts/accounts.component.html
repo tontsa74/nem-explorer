@@ -4,6 +4,7 @@
       <input matInput type="text" placeholder="address"
       #addressElement="ngModel"
       pattern="N+[A-Z0-9]+"
+      maxlength="40"
       required minlength="40"
       [(ngModel)]="address">
       <mat-error [hidden]="addressElement.valid || addressElement.pristine">

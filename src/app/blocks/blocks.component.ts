@@ -45,7 +45,7 @@ export class BlocksComponent implements OnInit {
   }
 
   // fetch 10 blocks
-  fetchBlocksAfter(height): void {
+  fetchBlocksAfter(height: number): void {
     const fetchHeight = {height: height - 10};
     this.nemnis.fetchBlocksAfter(fetchHeight, (response) => {
       response.forEach((x) => this.blocks.push(x));

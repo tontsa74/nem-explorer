@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NemNisService } from '../nem-nis.service';
 
 @Component({
   selector: 'app-nodes',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NodesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private nemnis: NemNisService) { }
 
   ngOnInit() {
+    this.fetchNodes();
   }
 
+  fetchNodes() {
+    this.nemnis.fetchNodes((response) => {
+      console.log(response);
+    });
+  }
 }

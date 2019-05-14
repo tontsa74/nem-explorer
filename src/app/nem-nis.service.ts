@@ -5,6 +5,7 @@ import { Block } from './interfaces/Block';
 import { ExplorerBlockViewModel, ExplorerBlockViewModelData } from './interfaces/ExplorerBlockViewModel';
 import { Height } from './interfaces/Chain';
 import { Account } from './interfaces/Account';
+import { Node, NodeCollection } from './interfaces/Node';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +45,14 @@ export class NemNisService {
     this.http.get<Account>(url + address).subscribe((resp) => {
       console.log(resp);
       callBackFunction(resp);
+    });
+  }
+
+  fetchNodes(callBackFunction: (result: Node[]) => void): void {
+    const url = this.url + '/node/peer-list/reachable';
+    this.http.get<NodeCollection>(url).subscribe(resp => {
+      console.log(resp);
+      callBackFunction(resp.data);
     });
   }
 

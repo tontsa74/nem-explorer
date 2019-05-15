@@ -61,7 +61,6 @@ export class NemNisService {
     forkJoin(
       heights.map(
         i => this.http.post<Block>(url, i)
-        // .map(res => res.json())
       )
     ).subscribe((resp) => {
         console.log(resp);

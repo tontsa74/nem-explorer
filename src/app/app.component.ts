@@ -7,11 +7,10 @@ import { NemNisService } from './nem-nis.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnChanges {
+export class AppComponent implements OnInit {
   title = 'NEM - Blockchain Explorer';
   navLinks: any[];
   activeLinkIndex = -1;
-  address;
   nodeUrl: string;
 
   constructor(private nemnis: NemNisService, private router: Router) {
@@ -32,7 +31,7 @@ export class AppComponent implements OnInit, OnChanges {
         label: 'Nodes',
         path: './nodes',
         index: 2
-      }
+      },
     ];
   }
 
@@ -43,12 +42,7 @@ export class AppComponent implements OnInit, OnChanges {
   });
   }
 
-  ngOnChanges() {
-    console.log('OnChanges');
+  changeNode(nodeUrl: string): void {
+    this.nemnis.changeNode(nodeUrl);
   }
-
-  fetchAccount(address) {
-    this.nemnis.address = address;
-  }
-
 }

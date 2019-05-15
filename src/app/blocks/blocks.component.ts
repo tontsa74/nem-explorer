@@ -12,13 +12,13 @@ import { Transaction } from '../interfaces/Transaction';
   styleUrls: ['./blocks.component.css']
 })
 export class BlocksComponent implements OnInit {
-  blocks: ExplorerBlockViewModelData[] = [];
+  blocks: Block[] = [];
   chainHeight: Height;
   blockSelected: Block;
   transactions: Transaction[] = [];
 
   displayedColumns: string[] = ['height', 'signer', 'timeStamp', 'txes'];
-  dataSource = new MatTableDataSource<ExplorerBlockViewModelData>(this.blocks);
+  dataSource = new MatTableDataSource<Block>(this.blocks);
   pageSizeOptions: number[] = [5, 10];
 
   // MatPaginator Output
@@ -32,6 +32,8 @@ export class BlocksComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     // this.nemnis.test();
     this.initBlocks();
+
+    // this.fetchBlock();
   }
 
   initBlocks() {
@@ -44,14 +46,34 @@ export class BlocksComponent implements OnInit {
     });
   }
 
+  fetchBlock() {
+    const height: Height = {height: 100};
+    this.nemnis.fetchBlocksPublic(height, (response) => {
+      console.log(response);
+      response.forEach((x) => this.blocks.push(x));
+      this.dataSource.data = this.blocks;
+    });
+
+    // this.nemnis.fetchBlocksPublic(height);
+  }
+
   // fetch 10 blocks
   fetchBlocksAfter(height: number): void {
     const fetchHeight = {height: height - 10};
     this.nemnis.fetchBlocksAfter(fetchHeight, (response) => {
-      response.forEach((x) => this.blocks.push(x));
+      response.forEach((x) => this.blocks.push(x.block));
       this.dataSource.data = this.blocks;
     });
   }
+
+    // fetch 10 blocks
+    fetchBlocksPublic(height: number): void {
+      const fetchHeight = {height: height - 9};
+      this.nemnis.fetchBlocksPublic(fetchHeight, (response) => {
+        response.forEach((x) => this.blocks.push(x));
+        this.dataSource.data = this.blocks;
+      });
+    }
 
   blockClicked(block: Block): void {
     this.blockSelected = block;
@@ -63,8 +85,8 @@ export class BlocksComponent implements OnInit {
     const last = first + pageEvent.pageSize * 2 - 1;
 
     if (last > pageEvent.length) {
-      const height: number = this.blocks[this.blocks.length - 1].block.height - 1;
-      this.fetchBlocksAfter(height);
+      const height: number = this.blocks[this.blocks.length - 1].height - 1;
+      this.fetchBlocksPublic(height);
     }
   }
 }

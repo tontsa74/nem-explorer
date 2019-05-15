@@ -45,7 +45,6 @@ export class NemNisService {
         i => this.http.post<Block>(url, i)
       )
     ).subscribe((resp) => {
-        console.log(resp);
         callBackFunction(resp.reverse());
     });
   }
@@ -53,7 +52,6 @@ export class NemNisService {
   fetchAccount(address, callBackFunction: (result: Account) => void): void {
     const url = this.nodeUrl.value + '/account/get?address=';
     this.http.get<Account>(url + address).subscribe((resp) => {
-      console.log(resp);
       callBackFunction(resp);
     });
   }
@@ -61,7 +59,6 @@ export class NemNisService {
   fetchNodes(callBackFunction: (result: NodeCollection) => void): void {
     const url = this.nodeUrl.value + '/node/peer-list/reachable';
     this.http.get<NodeCollection>(url).subscribe(resp => {
-      console.log(resp);
       callBackFunction(resp);
     });
   }

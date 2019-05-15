@@ -30,10 +30,7 @@ export class BlocksComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
-    // this.nemnis.test();
     this.initBlocks();
-
-    // this.fetchBlock();
   }
 
   initBlocks() {
@@ -44,17 +41,6 @@ export class BlocksComponent implements OnInit {
         this.fetchBlocksPublic(resp.height);
       }
     });
-  }
-
-  fetchBlock() {
-    const height: Height = {height: 100};
-    this.nemnis.fetchBlocksPublic(height, (response) => {
-      console.log(response);
-      response.forEach((x) => this.blocks.push(x));
-      this.dataSource.data = this.blocks;
-    });
-
-    // this.nemnis.fetchBlocksPublic(height);
   }
 
   // fetch 10 blocks

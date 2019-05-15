@@ -8,7 +8,7 @@ import { Account } from '../interfaces/Account';
   styleUrls: ['./accounts.component.css']
 })
 export class AccountsComponent implements OnInit {
-  address; // = 'NCSL345UPDK5X4WAZ2RMDVCYBAFZATIDCTTLHFFK';
+  address = 'NDEVPOSK4OMR4PRTLYFHX4W5QTOND7TZDT2DTU4Q';
   account: Account;
 
   constructor(private nemnis: NemNisService) { }
@@ -17,7 +17,6 @@ export class AccountsComponent implements OnInit {
 
   fetchAccount(address: string) {
     this.nemnis.fetchAccount(address, (resp) => {
-      console.log(resp);
       this.account = resp;
     });
   }

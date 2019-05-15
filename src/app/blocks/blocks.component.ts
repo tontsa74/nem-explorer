@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ExplorerBlockViewModelData } from '../interfaces/ExplorerBlockViewModel';
 import { NemNisService } from '../nem-nis.service';
 import { Height } from '../interfaces/Chain';
 import { Block } from '../interfaces/Block';
@@ -40,15 +39,6 @@ export class BlocksComponent implements OnInit {
       if (this.blocks.length === 0) {
         this.fetchBlocksPublic(resp.height);
       }
-    });
-  }
-
-  // fetch 10 blocks
-  fetchBlocksAfter(height: number): void {
-    const fetchHeight = {height: height - 10};
-    this.nemnis.fetchBlocksAfter(fetchHeight, (response) => {
-      response.forEach((x) => this.blocks.push(x.block));
-      this.dataSource.data = this.blocks;
     });
   }
 

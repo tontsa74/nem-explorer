@@ -13,7 +13,9 @@ import { BehaviorSubject, Subject, forkJoin } from 'rxjs';
 })
 export class NemNisService {
   // url = 'http://explorer-nem.northeurope.cloudapp.azure.com:3000';
-  url = 'http://localhost:7890';
+  // url = 'http://localhost:7890';
+  url = 'http://san.nem.ninja:7890';
+
   urlChange: Subject<string> = new Subject<string>();
 
   private nodeUrl = new BehaviorSubject(this.url);
@@ -55,7 +57,10 @@ export class NemNisService {
     const url = this.nodeUrl.value + '/block/at/public';
     const heights: Height[] = [];
     for (let i = 0; i < 10; i++) {
-      heights.push({height: height.height + i});
+      const h: number = height.height + i;
+      if (h > 0) {
+        heights.push({height: h});
+      }
     }
 
     forkJoin(

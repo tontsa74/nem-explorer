@@ -41,7 +41,7 @@ export class BlocksComponent implements OnInit {
       this.chainHeight = resp;
 
       if (this.blocks.length === 0) {
-        this.fetchBlocksAfter(resp.height);
+        this.fetchBlocksPublic(resp.height);
       }
     });
   }
@@ -66,14 +66,14 @@ export class BlocksComponent implements OnInit {
     });
   }
 
-    // fetch 10 blocks
-    fetchBlocksPublic(height: number): void {
-      const fetchHeight = {height: height - 9};
-      this.nemnis.fetchBlocksPublic(fetchHeight, (response) => {
-        response.forEach((x) => this.blocks.push(x));
-        this.dataSource.data = this.blocks;
-      });
-    }
+  // fetch 10 blocks
+  fetchBlocksPublic(height: number): void {
+    const fetchHeight = {height: height - 9};
+    this.nemnis.fetchBlocksPublic(fetchHeight, (response) => {
+      response.forEach((x) => this.blocks.push(x));
+      this.dataSource.data = this.blocks;
+    });
+  }
 
   blockClicked(block: Block): void {
     this.blockSelected = block;

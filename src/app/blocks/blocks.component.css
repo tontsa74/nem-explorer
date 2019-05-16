@@ -3,4 +3,7 @@ h3 {
 }
 table {
     width: 100%;
-  }
+}
+mat-spinner {
+  float: right;
+}

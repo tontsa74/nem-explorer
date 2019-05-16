@@ -1,5 +1,6 @@
 <h3>Blocks</h3>
 
+
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource">
     
@@ -26,13 +27,17 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="blockClicked(row)"></tr>
   </table>
-
-  <mat-paginator showFirstLastButtons
+  
+  <mat-spinner *ngIf="loading" diameter="20"></mat-spinner>
+  
+  <mat-paginator 
+    showFirstLastButtons
     [pageSizeOptions]="pageSizeOptions"
     (page)="fetchBlocks($event)" >
   </mat-paginator>
 
 </div>
+
 <div *ngIf="transactions.length > 0">
   <app-block-txes [blockSelected]="blockSelected" [transactions]="transactions"></app-block-txes>
 </div>

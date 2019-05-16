@@ -19,13 +19,16 @@ export class BlocksComponent implements OnInit {
   displayedColumns: string[] = ['height', 'signer', 'timeStamp', 'txes'];
   dataSource = new MatTableDataSource<Block>(this.blocks);
   pageSizeOptions: number[] = [5, 10];
+  loading: boolean;
 
   // MatPaginator Output
   pageEvent: PageEvent;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private nemnis: NemNisService) { }
+  constructor(private nemnis: NemNisService) {
+    this.loading = true;
+   }
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -37,17 +40,19 @@ export class BlocksComponent implements OnInit {
       this.chainHeight = resp;
 
       if (this.blocks.length === 0) {
-        this.fetchBlocksPublic(resp.height);
+        this.fetchBlocksPublic(resp.height, 10);
       }
     });
   }
 
-  // fetch 10 blocks
-  fetchBlocksPublic(height: number): void {
-    const fetchHeight = {height: height - 9};
-    this.nemnis.fetchBlocksPublic(fetchHeight, (response) => {
+  // fetch blocks
+  fetchBlocksPublic(height: number, amount: number): void {
+    this.loading = true;
+    const fetchHeight: Height = {height: height};
+    this.nemnis.fetchBlocksPublic(fetchHeight, amount, (response) => {
       response.forEach((x) => this.blocks.push(x));
       this.dataSource.data = this.blocks;
+      this.loading = false;
     });
   }
 
@@ -62,7 +67,7 @@ export class BlocksComponent implements OnInit {
 
     if (last > pageEvent.length) {
       const height: number = this.blocks[this.blocks.length - 1].height - 1;
-      this.fetchBlocksPublic(height);
+      this.fetchBlocksPublic(height, pageEvent.pageSize);
     }
   }
 }

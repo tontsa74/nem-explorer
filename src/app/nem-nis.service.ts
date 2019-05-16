@@ -31,11 +31,11 @@ export class NemNisService {
     });
   }
 
-  fetchBlocksPublic(height: Height, callBackFunction: (result: Block[]) => void): void {
+  fetchBlocksPublic(height: Height, amount: number, callBackFunction: (result: Block[]) => void): void {
     const url = this.nodeUrl.value + '/block/at/public';
     const heights: Height[] = [];
-    for (let i = 0; i < 10; i++) {
-      const h: number = height.height + i;
+    for (let i = amount - 1; i >= 0; i--) {
+      const h: number = height.height - i;
       if (h > 0) {
         heights.push({height: h});
       }

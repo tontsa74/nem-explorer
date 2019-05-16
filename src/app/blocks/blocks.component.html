@@ -28,7 +28,9 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="blockClicked(row)"></tr>
   </table>
   
-  <mat-spinner *ngIf="loading" diameter="20"></mat-spinner>
+  <div [style.visibility]="loading ? 'visible' : 'hidden'" class="spinner">
+    <mat-spinner diameter="20"></mat-spinner>
+  </div>
   
   <mat-paginator 
     showFirstLastButtons

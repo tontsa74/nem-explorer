@@ -6,7 +6,9 @@ import { Height } from './interfaces/Chain';
 import { Account } from './interfaces/Account';
 import { NodeCollection } from './interfaces/Node';
 import { BehaviorSubject, Subject, forkJoin } from 'rxjs';
+import { MatSnackBar } from '@angular/material';
 
+export class PizzaPartyComponent {}
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +20,7 @@ export class NemNisService {
   private nodeUrl = new BehaviorSubject(this.url);
   currentNode = this.nodeUrl.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
   changeNode(url: string) {
     this.nodeUrl.next(url);
@@ -28,6 +30,10 @@ export class NemNisService {
     const url = this.nodeUrl.value + '/chain/height';
     this.http.get<Height>(url).subscribe((resp) => {
       callBackFunction(resp);
+    }, (onError) => {
+      console.log(onError);
+      this.openSnackBar(onError.message);
+      callBackFunction(onError);
     });
   }
 
@@ -46,6 +52,10 @@ export class NemNisService {
       )
     ).subscribe((resp) => {
         callBackFunction(resp.reverse());
+    }, (onError) => {
+      console.log(onError);
+      this.openSnackBar(onError.message);
+      callBackFunction(onError);
     });
   }
 
@@ -53,6 +63,10 @@ export class NemNisService {
     const url = this.nodeUrl.value + '/account/get?address=';
     this.http.get<Account>(url + address).subscribe((resp) => {
       callBackFunction(resp);
+    }, (onError) => {
+      console.log(onError);
+      this.openSnackBar(onError.message);
+      callBackFunction(onError);
     });
   }
 
@@ -60,6 +74,14 @@ export class NemNisService {
     const url = this.nodeUrl.value + '/node/peer-list/reachable';
     this.http.get<NodeCollection>(url).subscribe(resp => {
       callBackFunction(resp);
+    }, (onError) => {
+      console.log(onError);
+      this.openSnackBar(onError.message);
+      callBackFunction(onError);
     });
+  }
+
+  openSnackBar(message: string) {
+    this.snackBar.open(message, 'dismiss', { duration: 5000 });
   }
 }

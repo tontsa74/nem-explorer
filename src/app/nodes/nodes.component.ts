@@ -32,7 +32,9 @@ export class NodesComponent implements OnInit {
 
   fetchNodes() {
     this.nemnis.fetchNodes((response) => {
-      this.dataSource.data = response.data;
+      if (response.data) {
+        this.dataSource.data = response.data;
+      }
     });
   }
 

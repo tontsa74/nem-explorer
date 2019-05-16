@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { BlocksModule } from './blocks/blocks.module';
 import { AccountsModule } from './accounts/accounts.module';
-import { MatToolbarModule, MatTabsModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatToolbarModule, MatTabsModule, MatProgressSpinnerModule, MatSnackBarModule } from '@angular/material';
 import { NodesModule } from './nodes/nodes.module';
 
 import { MatListModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule } from '@angular/material';
@@ -31,7 +31,7 @@ import { FormsModule } from '@angular/forms';
     MatToolbarModule,
     MatTabsModule,
     MatListModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, FormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule, MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

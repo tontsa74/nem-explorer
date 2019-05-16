@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NemNisService } from '../nem-nis.service';
 import { Height } from '../interfaces/Chain';
 import { Block } from '../interfaces/Block';
-import { MatTableDataSource, MatPaginator, PageEvent } from '@angular/material';
+import { MatTableDataSource, MatPaginator, PageEvent, MatSnackBar } from '@angular/material';
 import { Transaction } from '../interfaces/Transaction';
 
 @Component({
@@ -36,23 +36,28 @@ export class BlocksComponent implements OnInit {
   }
 
   initBlocks() {
+    this.loading = true;
     this.nemnis.fetchChainHeight((resp) => {
       this.chainHeight = resp;
 
-      if (this.blocks.length === 0) {
+      if (resp.height > 0 && this.blocks.length === 0) {
         this.fetchBlocksPublic(resp.height, 10);
       }
+
+      this.loading = false;
     });
   }
 
   // fetch blocks
   fetchBlocksPublic(height: number, amount: number): void {
     this.loading = true;
-    const fetchHeight: Height = {height: height};
+    const fetchHeight: Height = {height};
     this.nemnis.fetchBlocksPublic(fetchHeight, amount, (response) => {
-      response.forEach((x) => this.blocks.push(x));
-      this.dataSource.data = this.blocks;
-      this.loading = false;
+      if (response[0].height) {
+        response.forEach((x) => this.blocks.push(x));
+        this.dataSource.data = this.blocks;
+        this.loading = false;
+      }
     });
   }
 
@@ -65,7 +70,7 @@ export class BlocksComponent implements OnInit {
     const first = pageEvent.pageIndex * pageEvent.pageSize;
     const last = first + pageEvent.pageSize * 2 - 1;
 
-    if (last > pageEvent.length) {
+    if (last > pageEvent.length && this.blocks.length > 0) {
       const height: number = this.blocks[this.blocks.length - 1].height - 1;
       this.fetchBlocksPublic(height, pageEvent.pageSize);
     }

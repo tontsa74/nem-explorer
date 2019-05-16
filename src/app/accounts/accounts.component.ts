@@ -17,7 +17,6 @@ export class AccountsComponent implements OnInit {
 
   fetchAccount(address: string) {
     this.nemnis.fetchAccount(address, (resp) => {
-      console.log(resp);
       if (resp.account) {
         this.account = resp;
       }

@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
+## NEM node
+
+Install NEM node as backend server https://nem.io/downloads/
+
+download nis-standalone example 'nis-0.6.97.tgz'
+unpack
+cd package
+runNis (windows)
+or
+./nix.runNis.sh (linux)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -5,27 +5,45 @@ import { Block } from './interfaces/Block';
 import { Height } from './interfaces/Chain';
 import { Account } from './interfaces/Account';
 import { NodeCollection } from './interfaces/Node';
-import { BehaviorSubject, Subject, forkJoin } from 'rxjs';
+import { BehaviorSubject, forkJoin } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 
-export class PizzaPartyComponent {}
+/**
+ * Service fetch NEM node with API's
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class NemNisService {
+  /**
+   * Default NEM node url
+   */
   url = 'http://san.nem.ninja:7890';
 
-  urlChange: Subject<string> = new Subject<string>();
-
+  /**
+   * NEM node url syncronization with components
+   */
   private nodeUrl = new BehaviorSubject(this.url);
   currentNode = this.nodeUrl.asObservable();
 
+  /**
+   * @param http HttpClient
+   * @param snackBar Snack bar for error messages to UI
+   */
   constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
+  /**
+   * Changes NEM node to given url
+   * @param url NEM node url
+   */
   changeNode(url: string) {
     this.nodeUrl.next(url);
   }
 
+  /**
+   * Fetch chain height
+   * @param callBackFunction for the result
+   */
   fetchChainHeight(callBackFunction: (result: Height) => void): void {
     const url = this.nodeUrl.value + '/chain/height';
     this.http.get<Height>(url).subscribe((resp) => {
@@ -37,6 +55,12 @@ export class NemNisService {
     });
   }
 
+  /**
+   * Fetch blocks
+   * @param height Chain height of first block
+   * @param amount Amount of blocks
+   * @param callBackFunction for the result
+   */
   fetchBlocksPublic(height: Height, amount: number, callBackFunction: (result: Block[]) => void): void {
     const url = this.nodeUrl.value + '/block/at/public';
     const heights: Height[] = [];
@@ -59,6 +83,11 @@ export class NemNisService {
     });
   }
 
+  /**
+   * Fetch account details
+   * @param address address of account
+   * @param callBackFunction for the result
+   */
   fetchAccount(address, callBackFunction: (result: Account) => void): void {
     const url = this.nodeUrl.value + '/account/get?address=';
     this.http.get<Account>(url + address).subscribe((resp) => {
@@ -70,6 +99,10 @@ export class NemNisService {
     });
   }
 
+  /**
+   * Fetch NEM nodes
+   * @param callBackFunction for the result
+   */
   fetchNodes(callBackFunction: (result: NodeCollection) => void): void {
     const url = this.nodeUrl.value + '/node/peer-list/reachable';
     this.http.get<NodeCollection>(url).subscribe(resp => {
@@ -81,6 +114,10 @@ export class NemNisService {
     });
   }
 
+  /**
+   * Displays message to UI
+   * @param message message to display
+   */
   openSnackBar(message: string) {
     this.snackBar.open(message, 'dismiss', { duration: 5000 });
   }

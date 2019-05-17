@@ -1,11 +1,18 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Message } from '../interfaces/Transaction';
 
+/**
+ * Transform NEM message to string
+ */
 @Pipe({
   name: 'message'
 })
 export class MessagePipe implements PipeTransform {
 
+  /**
+   * Transform Hexadecimal to ASCII
+   * @param message NEM message
+   */
   transform(message: Message): string {
     let result = '';
     switch (message.type) {

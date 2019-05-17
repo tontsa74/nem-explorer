@@ -6,9 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 You can use node url from list: [nemnodes.org](https://nemnodes.org/nodes/)
 
 or locally:
-```
-Install NEM node as backend server (https://nem.io/downloads/)
 
+Install NEM node as backend server (https://nem.io/downloads/)
+```
 - download nis-standalone example 'nis-0.6.97.tgz'
 - unpack
 - cd package

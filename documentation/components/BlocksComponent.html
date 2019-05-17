@@ -1,0 +1,1268 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nem-explorer documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">nem-explorer documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>BlocksComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/blocks/blocks.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Displays NEM blocks.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-blocks</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./blocks.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./blocks.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#blocks">blocks</a>
+                            </li>
+                            <li>
+                                <a href="#blockSelected">blockSelected</a>
+                            </li>
+                            <li>
+                                <a href="#chainHeight">chainHeight</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource">dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                <a href="#pageEvent">pageEvent</a>
+                            </li>
+                            <li>
+                                <a href="#pageSizeOptions">pageSizeOptions</a>
+                            </li>
+                            <li>
+                                <a href="#paginator">paginator</a>
+                            </li>
+                            <li>
+                                <a href="#transactions">transactions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#blockClicked">blockClicked</a>
+                            </li>
+                            <li>
+                                <a href="#fetchBlocks">fetchBlocks</a>
+                            </li>
+                            <li>
+                                <a href="#fetchBlocksPublic">fetchBlocksPublic</a>
+                            </li>
+                            <li>
+                                <a href="#initBlocks">initBlocks</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(nemnis: <a href="../injectables/NemNisService.html">NemNisService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/blocks/blocks.component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>nemnis</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NemNisService.html" target="_self" >NemNisService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Service to fetch data.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="blockClicked"></a>
+                    <span class="name">
+                        <b>
+                            blockClicked
+                        </b>
+                        <a href="#blockClicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>blockClicked(block: <a href="../interfaces/Block.html">Block</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/blocks/blocks.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Sets selected block and tracactions.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>block</td>
+                                    <td>
+                                                <code><a href="../interfaces/Block.html" target="_self" >Block</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>NEM block</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchBlocks"></a>
+                    <span class="name">
+                        <b>
+                            fetchBlocks
+                        </b>
+                        <a href="#fetchBlocks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchBlocks(pageEvent: PageEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">src/app/blocks/blocks.component.ts:127</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fetch more blocks to browse if needed.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pageEvent</td>
+                                    <td>
+                                            <code>PageEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Paginator event</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchBlocksPublic"></a>
+                    <span class="name">
+                        <b>
+                            fetchBlocksPublic
+                        </b>
+                        <a href="#fetchBlocksPublic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchBlocksPublic(height: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, amount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/blocks/blocks.component.ts:102</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fetch blocks from service to table</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>height</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>height of first block</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>amount</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>amount of blocks</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initBlocks"></a>
+                    <span class="name">
+                        <b>
+                            initBlocks
+                        </b>
+                        <a href="#initBlocks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initBlocks()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/blocks/blocks.component.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fetch NEM blockchain current height and fetch blocks.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/blocks/blocks.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Init and fetch blocks.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="blocks"></a>
+                        <span class="name">
+                            <b>
+                            blocks</b>
+                            <a href="#blocks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Block.html" target="_self" >Block[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/blocks/blocks.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>NEM blocks</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="blockSelected"></a>
+                        <span class="name">
+                            <b>
+                            blockSelected</b>
+                            <a href="#blockSelected"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Block.html" target="_self" >Block</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/blocks/blocks.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>NEM block selected.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chainHeight"></a>
+                        <span class="name">
+                            <b>
+                            chainHeight</b>
+                            <a href="#chainHeight"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Height.html" target="_self" >Height</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/blocks/blocks.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>NEM blockchain current height.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSource"></a>
+                        <span class="name">
+                            <b>
+                            dataSource</b>
+                            <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new MatTableDataSource&lt;Block&gt;(this.blocks)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/blocks/blocks.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Data source of displayed table.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedColumns"></a>
+                        <span class="name">
+                            <b>
+                            displayedColumns</b>
+                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;height&#x27;, &#x27;signer&#x27;, &#x27;timeStamp&#x27;, &#x27;txes&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/blocks/blocks.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Table columns to display.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                            loading</b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/blocks/blocks.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Loading state of data</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pageEvent"></a>
+                        <span class="name">
+                            <b>
+                            pageEvent</b>
+                            <a href="#pageEvent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>PageEvent</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/blocks/blocks.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Table paginator output event.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pageSizeOptions"></a>
+                        <span class="name">
+                            <b>
+                            pageSizeOptions</b>
+                            <a href="#pageSizeOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>number[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[5, 10]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/blocks/blocks.component.ts:50</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Page size options for table.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paginator"></a>
+                        <span class="name">
+                            <b>
+                            paginator</b>
+                            <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatPaginator</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatPaginator)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/blocks/blocks.component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Paginator of table.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="transactions"></a>
+                        <span class="name">
+                            <b>
+                            transactions</b>
+                            <a href="#transactions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Transaction.html" target="_self" >Transaction[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/blocks/blocks.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>NEM transactions in selected block</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { NemNisService } from &#x27;../nem-nis.service&#x27;;
+import { Height } from &#x27;../interfaces/Chain&#x27;;
+import { Block } from &#x27;../interfaces/Block&#x27;;
+import { MatTableDataSource, MatPaginator, PageEvent } from &#x27;@angular/material&#x27;;
+import { Transaction } from &#x27;../interfaces/Transaction&#x27;;
+
+/**
+ * Displays NEM blocks.
+ */
+@Component({
+  selector: &#x27;app-blocks&#x27;,
+  templateUrl: &#x27;./blocks.component.html&#x27;,
+  styleUrls: [&#x27;./blocks.component.css&#x27;]
+})
+export class BlocksComponent implements OnInit {
+  /**
+   * NEM blocks
+   */
+  blocks: Block[] &#x3D; [];
+
+  /**
+   * NEM blockchain current height.
+   */
+  chainHeight: Height;
+
+  /**
+   * NEM block selected.
+   */
+  blockSelected: Block;
+
+  /**
+   * NEM transactions in selected block
+   */
+  transactions: Transaction[] &#x3D; [];
+
+  /**
+   * Table columns to display.
+   */
+  displayedColumns: string[] &#x3D; [&#x27;height&#x27;, &#x27;signer&#x27;, &#x27;timeStamp&#x27;, &#x27;txes&#x27;];
+  
+  /**
+   * Data source of displayed table.
+   */
+  dataSource &#x3D; new MatTableDataSource&lt;Block&gt;(this.blocks);
+
+  /**
+   * Page size options for table.
+   */
+  pageSizeOptions: number[] &#x3D; [5, 10];
+
+  /**
+   * Loading state of data
+   */
+  loading: boolean;
+
+  /**
+   * Table paginator output event.
+   */
+  pageEvent: PageEvent;
+
+  /**
+   * Paginator of table.
+   */
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  /**
+   * 
+   * @param nemnis Service to fetch data.
+   */
+  constructor(private nemnis: NemNisService) { }
+
+  /**
+   * Init and fetch blocks.
+   */
+  ngOnInit(): void {
+    this.dataSource.paginator &#x3D; this.paginator;
+    this.initBlocks();
+  }
+
+  /**
+   * Fetch NEM blockchain current height and fetch blocks.
+   */
+  initBlocks() {
+    this.loading &#x3D; true;
+    this.nemnis.fetchChainHeight((resp) &#x3D;&gt; {
+      this.chainHeight &#x3D; resp;
+
+      if (resp.height &gt; 0 &amp;&amp; this.blocks.length &#x3D;&#x3D;&#x3D; 0) {
+        this.fetchBlocksPublic(resp.height, 10);
+      }
+
+      this.loading &#x3D; false;
+    });
+  }
+
+  /**
+   * Fetch blocks from service to table
+   * @param height height of first block
+   * @param amount amount of blocks
+   */
+  fetchBlocksPublic(height: number, amount: number): void {
+    this.loading &#x3D; true;
+    const fetchHeight: Height &#x3D; {height};
+    this.nemnis.fetchBlocksPublic(fetchHeight, amount, (response) &#x3D;&gt; {
+      if (response[0].height) {
+        response.forEach((x) &#x3D;&gt; this.blocks.push(x));
+        this.dataSource.data &#x3D; this.blocks;
+        this.loading &#x3D; false;
+      }
+    });
+  }
+
+  /**
+   * Sets selected block and tracactions.
+   * @param block NEM block
+   */
+  blockClicked(block: Block): void {
+    this.blockSelected &#x3D; block;
+    this.transactions &#x3D; block.transactions;
+  }
+
+  /**
+   * Fetch more blocks to browse if needed.
+   * @param pageEvent Paginator event
+   */
+  fetchBlocks(pageEvent: PageEvent) {
+    const first &#x3D; pageEvent.pageIndex * pageEvent.pageSize;
+    const last &#x3D; first + pageEvent.pageSize * 2 - 1;
+
+    if (last &gt; pageEvent.length &amp;&amp; this.blocks.length &gt; 0) {
+      const height: number &#x3D; this.blocks[this.blocks.length - 1].height - 1;
+      this.fetchBlocksPublic(height, pageEvent.pageSize);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;h3&gt;Blocks&lt;/h3&gt;
+
+
+&lt;div class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+  &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot;&gt;
+    
+    &lt;ng-container matColumnDef&#x3D;&quot;height&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt; Height &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let data&quot;&gt; {{data.height}} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+    &lt;ng-container matColumnDef&#x3D;&quot;signer&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt; Signer &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let data&quot;&gt; {{data.signer}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container matColumnDef&#x3D;&quot;timeStamp&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt; TimeStamp &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let data&quot;&gt; {{data.timeStamp | msNemesis | date:&quot;yyyy-MM-dd HH:mm:ss&quot;}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container matColumnDef&#x3D;&quot;txes&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef&gt; Txes &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let data&quot;&gt; {{data.transactions.length}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+
+    &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+    &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns&quot; (click)&#x3D;&quot;blockClicked(row)&quot;&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+  
+  &lt;div [style.visibility]&#x3D;&quot;loading ? &#x27;visible&#x27; : &#x27;hidden&#x27;&quot; class&#x3D;&quot;spinner&quot;&gt;
+    &lt;mat-spinner diameter&#x3D;&quot;20&quot;&gt;&lt;/mat-spinner&gt;
+  &lt;/div&gt;
+  
+  &lt;mat-paginator 
+    showFirstLastButtons
+    [pageSizeOptions]&#x3D;&quot;pageSizeOptions&quot;
+    (page)&#x3D;&quot;fetchBlocks($event)&quot; &gt;
+  &lt;/mat-paginator&gt;
+
+&lt;/div&gt;
+
+&lt;div *ngIf&#x3D;&quot;transactions.length &gt; 0&quot;&gt;
+  &lt;app-block-txes [blockSelected]&#x3D;&quot;blockSelected&quot; [transactions]&#x3D;&quot;transactions&quot;&gt;&lt;/app-block-txes&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./blocks.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">h3 {
+  text-align: center
+}
+table {
+    width: 100%;
+}
+.spinner {
+  float: right;
+}
+.mat-cell {
+  padding: 8px 8px 8px 0;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><h3>Blocks</h3><div class="mat-elevation-z8">  <table mat-table [dataSource]="dataSource">        <ng-container matColumnDef="height">        <th mat-header-cell *matHeaderCellDef> Height </th>        <td mat-cell *matCellDef="let data"> {{data.height}} </td>      </ng-container>    <ng-container matColumnDef="signer">      <th mat-header-cell *matHeaderCellDef> Signer </th>      <td mat-cell *matCellDef="let data"> {{data.signer}} </td>    </ng-container>    <ng-container matColumnDef="timeStamp">      <th mat-header-cell *matHeaderCellDef> TimeStamp </th>      <td mat-cell *matCellDef="let data"> {{data.timeStamp | msNemesis | date:"yyyy-MM-dd HH:mm:ss"}} </td>    </ng-container>    <ng-container matColumnDef="txes">      <th mat-header-cell *matHeaderCellDef> Txes </th>      <td mat-cell *matCellDef="let data"> {{data.transactions.length}} </td>    </ng-container>    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>    <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="blockClicked(row)"></tr>  </table>    <div [style.visibility]="loading ? \'visible\' : \'hidden\'" class="spinner">    <mat-spinner diameter="20"></mat-spinner>  </div>    <mat-paginator     showFirstLastButtons    [pageSizeOptions]="pageSizeOptions"    (page)="fetchBlocks($event)" >  </mat-paginator></div><div *ngIf="transactions.length > 0">  <app-block-txes [blockSelected]="blockSelected" [transactions]="transactions"></app-block-txes></div></div>'
+    var COMPONENTS = [{'name': 'AccountsComponent', 'selector': 'app-accounts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlocksComponent', 'selector': 'app-blocks'},{'name': 'BlockTxesComponent', 'selector': 'app-block-txes'},{'name': 'NodesComponent', 'selector': 'app-nodes'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'TxesDetailsComponent', 'selector': 'app-txes-details'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BlocksComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BlocksComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

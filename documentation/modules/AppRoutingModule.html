@@ -74,6 +74,9 @@
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { NotfoundComponent } from &#x27;./notfound/notfound.component&#x27;;
 
+/**
+ * Routes to default and not found components.
+ */
 const routes: Routes &#x3D; [
   { path: &#x27;&#x27;, redirectTo: &#x27;/blocks&#x27;, pathMatch: &#x27;full&#x27; },
   { path: &#x27;**&#x27;, component: NotfoundComponent }

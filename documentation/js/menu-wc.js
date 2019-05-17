@@ -168,28 +168,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                 </ul>
                 </li>
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links"' :
-                            'data-target="#xs-components-links"' }>
-                            <span class="icon ion-md-cog"></span>
-                            <span>Components</span>
-                            <span class="icon ion-ios-arrow-down"></span>
-                        </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
-                            <li class="link">
-                                <a href="components/AppComponent.html" data-type="entity-link">AppComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/BlockTxesComponent.html" data-type="entity-link">BlockTxesComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/NotfoundComponent.html" data-type="entity-link">NotfoundComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/TxesDetailsComponent.html" data-type="entity-link">TxesDetailsComponent</a>
-                            </li>
-                        </ul>
-                    </li>
                         <li class="chapter">
                             <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links"' :
                                 'data-target="#xs-injectables-links"' }>
@@ -261,22 +239,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                         </ul>
                     </li>
-                        <li class="chapter">
-                            <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#pipes-links"' :
-                                'data-target="#xs-pipes-links"' }>
-                                <span class="icon ion-md-add"></span>
-                                <span>Pipes</span>
-                                <span class="icon ion-ios-arrow-down"></span>
-                            </div>
-                            <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links"' : 'id="xs-pipes-links"' }>
-                                <li class="link">
-                                    <a href="pipes/MessagePipe.html" data-type="entity-link">MessagePipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="pipes/MsNemesisPipe.html" data-type="entity-link">MsNemesisPipe</a>
-                                </li>
-                            </ul>
-                        </li>
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#miscellaneous-links"'
                             : 'data-target="#xs-miscellaneous-links"' }>

@@ -3,15 +3,20 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
 ## NEM node
+You can use node url from list:
+`https://nemnodes.org/nodes/`
 
+or locally:
+```
 Install NEM node as backend server https://nem.io/downloads/
 
-download nis-standalone example 'nis-0.6.97.tgz'
-unpack
-cd package
-runNis (windows)
+- download nis-standalone example 'nis-0.6.97.tgz'
+- unpack
+- cd package
+- runNis (windows)
 or
-./nix.runNis.sh (linux)
+- ./nix.runNis.sh (linux)
+```
 
 ## Development server
 

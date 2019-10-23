@@ -62,7 +62,7 @@ export class BlocksComponent implements OnInit {
   /**
    * Paginator of table.
    */
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   /**
    * 

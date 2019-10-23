@@ -45,7 +45,7 @@ export class NodesComponent implements OnInit {
   /**
    * Paginator of table.
    */
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   /**
    * NEM node url

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Block } from 'src/app/interfaces/Block';
 import { Transaction } from 'src/app/interfaces/Transaction';
 import { TxesDetailsComponent } from './txes-details/txes-details.component';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 /**
  * Display transactions in block.

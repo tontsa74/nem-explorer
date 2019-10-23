@@ -6,7 +6,7 @@ import { Height } from './interfaces/Chain';
 import { Account } from './interfaces/Account';
 import { NodeCollection } from './interfaces/Node';
 import { BehaviorSubject, forkJoin } from 'rxjs';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 /**
  * Service fetch NEM node with API's

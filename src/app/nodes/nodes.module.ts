@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTableModule, MatDialogModule, MatPaginatorModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 import { NodesRoutingModule } from './nodes-routing.module';
 import { NodesComponent } from './nodes.component';

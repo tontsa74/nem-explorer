@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NemNisService } from '../nem-nis.service';
 import { Height } from '../interfaces/Chain';
 import { Block } from '../interfaces/Block';
-import { MatTableDataSource, MatPaginator, PageEvent } from '@angular/material';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Transaction } from '../interfaces/Transaction';
 
 /**
